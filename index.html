@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>test</title>
+  <link rel="stylesheet" href="node_modules/purecss/build/pure.css ">
+  <link rel="stylesheet" href="app/css/app.css">
+</head>
+
+<body>
+  <div id="logo"></div>
+  <div id="navbar" class="pure-menu pure-menu-horizontal">
+    <a href="#" class="pure-menu-heading pure-menu-link"></a>
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item">欢迎你，张三</li>
+      <li id="time" class="pure-menu-item">2017年8月1日 星期一</li>
+      <li class="pure-menu-item"><a href="#" class="pure-menu-link">系统设置</a></li>
+      <li class="pure-menu-item"><a href="#" class="pure-menu-link">在线用户</a></li>
+      <li class="pure-menu-item"><a href="#" class="pure-menu-link">我的首页</a></li>
+    </ul>
+    <div class="pull-right">
+      <li class="pure-menu-item"><a href="#" class="pure-menu-link">重新登录</a></li>
+      <li class="pure-menu-item"><a href="#" class="pure-menu-link">退出</a></li>
+      <li class="pure-menu-item"><a href="#" class="pure-menu-link">退出</a></li>
+      <li class="pure-menu-item"><a href="#" class="pure-menu-link"><img></a></li>
+    </div>
+  </div>
+  <div id="container">
+    <div id="sidebar-left">
+      <div id="queryFuncBanner" class="queryFuncBanner">
+        <input id="queryFuncInput" class="queryFuncInput" value="" />
+        <div id="queryFuncSuggestDiv" class="queryFuncSuggest"></div>
+      </div>
+      <div class="queryFuncIcon" id="queryFuncIconDiv" title="快速定位"></div>
+      <div id="tree" class="list">
+        <ul class="yiji">
+        </ul>
+      </div>
+    </div>
+    <div id="content">
+      <div id="content-navbar" class="pure-menu pure-menu-horizontal">
+        <ul id="content-navbar-left" class="pure-menu-list">
+          <li class="pure-menu-item"><a href="#" class="pure-menu-link">待办</a></li>
+          <li class="pure-menu-item"><a href="#" class="pure-menu-link">在途</a></li>
+          <li class="pure-menu-item"><a href="#" class="pure-menu-link">已办</a></li>
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link">通知</a>
+            <span id="notifyCount" class="msg-count"></span>
+          </li>
+        </ul>
+        <div id="content-navbar-right" class="pull-right">
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href=""> 设置业务排序 </a>
+          </li>
+          <li class="pure-menu-item">
+            <label for="taskGroupCkDiv" class="pure-checkbox"> <input id="taskGroupCkDiv" type="checkbox"> 按业务分类显示 </label>
+          </li>
+          <li class="pure-menu-item">
+            <div id="notifyCkDiv" style="float:left;margin-top:14px;margin-right:20px;display:none;">
+              <label for="taskGroupCkDiv" class="pure-checkbox"> <input id="notifyTypeCk" type="checkbox"> 只显示未阅通知 </label>
+          </li>
+          <li class="pure-menu-item">
+            <img id="reflash" src="app/images/refresh.png" title="刷新" align="absmiddle"></img>
+          </li>
+          <li class="pure-menu-item">
+            <div class="search-field">
+              <input id="searchTX" name="searchTX" type="text" onkeydown="filterTaskByKey(event)">
+              <img id="searchImg" src="app/images/search.png" onclick="filterTask(event)"></img>
+            </div>
+          </li>
+          </div>
+        </div>
+        <div id="task_data_scroll_div">
+          <div id="task_data_div">
+            <ul>
+              <a href="">
+                <li>
+                  <img src="app/images/daiban.png" alt="">商务接待工作申请 <span class="task-msg-count">33</span>
+                </li>
+              </a>
+            </ul>
+            <ul>
+              <a href="">
+                <li>
+                  <img src="app/images/daiban.png" alt="">商务接待工作申请 <span class="task-msg-count">33</span>
+                </li>
+              </a>
+            </ul>
+            <ul>
+              <a href="">
+                <li>
+                  <img src="app/images/daiban.png" alt="">商务接待工作申请 <span class="task-msg-count">33</span>
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="box">
+            <div class="pure-menu pure-menu-horizontal">
+              <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">督办事项</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">预警提示</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="box">
+            <div class="pure-menu pure-menu-horizontal">
+              <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">公告</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar-right">
+        <div id="business-actions">
+          <div class="wrapper">
+            <a href="#">
+              <img src="app/images/daiban.png" alt="">
+              <p> 业务查询</p>
+            </a>
+            <a href="#">
+            <img src="app/images/daiban.png" alt="">
+                <p> 业务查询</p>
+            </a>
+            <a href="#">
+              <img src="app/images/daiban.png" alt="">
+              <p> 业务查询</p>
+            </a>
+            <a>
+            <img src="app/images/daiban.png" alt="">
+               <p> 业务查询</p>
+            </a>
+          </div>
+        </div>
+        <div class="common">
+          常用功能
+          <a class="pull-right" href="javascript:setShortcutFunc()">
+                              <img src="app/images/setting.png"></img>
+                          </a>
+        </div>
+        <div id="shortcutDiv">
+          <ul id="shortcutUL">
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="app/jquery-1.11.1.min.js" charset="utf-8"></script>
+    <script src="app/mywork_search.js" charset="utf-8"></script>
+    <script src="app/mywork.js" charset="utf-8"></script>
+    <script src="app/task.js" charset="utf-8"></script>
+    <script src="app/shortcut.js" charset="utf-8"></script>
+    <script src="app/desktop.js" charset="utf-8"></script>
+    <script src="app/app.js" charset="utf-8"></script>
+</body>
+
+</html>

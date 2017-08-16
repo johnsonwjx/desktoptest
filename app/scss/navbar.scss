@@ -1,0 +1,23 @@
+#navbar {
+  background-color: $navbar-color-bgcolor;
+  color: $navbar-color;
+  font-size: 14px;
+
+  .pure-menu-item {
+    height: $navbar-height;
+    line-height: $navbar-height;
+  }
+
+  .pure-menu-link {
+    padding-top: 0;
+  }
+
+  a {
+    color: $navbar-color;
+    &:focus,
+    &:hover {
+      background: none;
+      color: #FFF;
+    }
+  }
+}
