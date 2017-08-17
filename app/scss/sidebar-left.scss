@@ -1,6 +1,7 @@
 #sidebar-left {
-  position: absolute;
+  left: - $sidebar-left-width;
   width: $sidebar-left-width;
+  margin-left: -100%;
 
   #tree {
     height: 100%;

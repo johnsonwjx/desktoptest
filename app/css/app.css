@@ -15,8 +15,9 @@
       color: #FFF; }
 
 #sidebar-left {
-  position: absolute;
-  width: 300px; }
+  left: -300px;
+  width: 300px;
+  margin-left: -100%; }
   #sidebar-left #tree {
     height: 100%;
     background: #cfe1f8; }
@@ -165,25 +166,27 @@
   background-color: #aaaaaa; }
 
 #sidebar-right {
-  position: absolute;
-  right: 0;
-  width: 250px; }
+  right: -250px;
+  width: 250px;
+  margin-left: -250px; }
   #sidebar-right #business-actions {
+    height: 170px;
     background: #cfe1f8;
     padding: 10px;
-    text-align: center;
-    height: 160px; }
+    text-align: center; }
     #sidebar-right #business-actions a {
       float: left;
       width: 50%;
-      height: 70px; }
+      height: 50%; }
+    #sidebar-right #business-actions .wrapper {
+      height: 100%; }
     #sidebar-right #business-actions .wrapper:after {
       content: '';
       display: block;
       clear: both; }
   #sidebar-right #shortcutDiv {
     position: absolute;
-    top: 220px;
+    top: 230px;
     bottom: 0;
     z-index: 60;
     background-color: #ebf2fa;
@@ -230,50 +233,51 @@
 
 #content {
   height: 100%;
-  margin-left: 300px;
-  margin-right: 250px; }
-  #content #content-navbar {
-    font-weight: bolder;
-    font-size: 18px; }
-    #content #content-navbar #content-navbar-left > * {
-      width: 100px;
-      text-align: center; }
-    #content #content-navbar #content-navbar-right > * {
-      margin-right: 30px; }
-    #content #content-navbar #content-navbar-right #reflash {
-      width: 16px;
-      height: 16px;
-      cursor: pointer; }
-  #content #task_data_scroll_div {
-    overflow: auto;
-    height: 60%;
-    background-color: white;
-    border: 1px solid #CCC;
-    padding: 0 40px; }
-    #content #task_data_scroll_div ul li {
-      position: relative;
-      list-style: none;
-      height: 50px;
-      line-height: 50px;
-      border-bottom: 3px solid #CCC; }
-      #content #task_data_scroll_div ul li .task-msg-count {
-        position: absolute;
-        right: 100px;
-        top: 20px;
-        display: inline;
-        width: 30px;
-        margin-left: 100px;
-        line-height: 20px;
-        font-size: 13px;
-        text-align: center;
-        color: white;
-        background: url("../images/msgt.png") no-repeat; }
-      #content #task_data_scroll_div ul li img {
-        margin-right: 20px; }
+  width: 100%; }
+  #content #task-content {
+    height: 60%; }
+    #content #task-content #task-navbar {
+      font-weight: bolder;
+      font-size: 18px; }
+      #content #task-content #task-navbar #task-navbar-left > * {
+        width: 100px;
+        text-align: center; }
+      #content #task-content #task-navbar #task-navbar-right > * {
+        margin-right: 30px; }
+      #content #task-content #task-navbar #task-navbar-right #reflash {
+        width: 16px;
+        height: 16px;
+        cursor: pointer; }
+    #content #task-content #task_data_scroll_div {
+      height: 100%;
+      overflow: auto;
+      background-color: white;
+      border: 1px solid #CCC;
+      padding: 0 40px; }
+      #content #task-content #task_data_scroll_div ul li {
+        position: relative;
+        list-style: none;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 3px solid #CCC; }
+        #content #task-content #task_data_scroll_div ul li .task-msg-count {
+          position: absolute;
+          right: 100px;
+          top: 20px;
+          display: inline;
+          width: 30px;
+          margin-left: 100px;
+          line-height: 20px;
+          font-size: 13px;
+          text-align: center;
+          color: white;
+          background: url("../images/msgt.png") no-repeat; }
+        #content #task-content #task_data_scroll_div ul li img {
+          margin-right: 20px; }
   #content .row {
     position: relative;
     width: 100%;
-    height: 36%;
+    height: 40%;
     overflow: hidden; }
     #content .row .box {
       width: 50%;
@@ -287,22 +291,25 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
 
-body,
 html {
   width: 100%;
   height: 100%; }
 
 #container {
-  position: absolute;
-  top: 45px;
-  bottom: 10px;
   width: 100%;
-  border-bottom: 1px solid #ccc; }
+  min-width: 400px;
+  height: 800px;
+  border-bottom: 1px solid #ccc;
+  padding: 0 250px 0 300px; }
   #container > div {
-    top: 0;
-    bottom: 0;
+    position: relative;
+    height: 100%;
+    float: left;
     border: solid 1px #ccc; }
 
 .msg-count {
@@ -337,8 +344,9 @@ html {
 
 .pull-right {
   float: right; }
-  .pull-right ::after {
-    clear: both; }
+  .pull-right:after {
+    clear: both;
+    content: ''; }
 
 .wrapper {
   border: 1px solid #ccc;

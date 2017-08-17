@@ -1,62 +1,65 @@
 #content {
   height: 100%;
-  margin-left: $sidebar-left-width;
-  margin-right: $sidebar-right-width;
+  width: 100%;
 
-  #content-navbar {
-    font-weight: bolder;
-    font-size: 18px;
-
-    #content-navbar-left {
-      > * {
-        width: 100px;
-        text-align: center;
-      }
-    }
-
-    #content-navbar-right {
-      > * {
-        margin-right: 30px;
-      }
-
-      #reflash {
-        width: 16px;
-        height: 16px;
-        cursor: pointer;
-      }
-    }
-  }
-
-  #task_data_scroll_div {
-    overflow: auto;
+  #task-content {
     height: 60%;
-    background-color: white;
-    border: 1px solid #CCC;
-    padding: 0 40px;
 
-    ul li {
-      position: relative;
-      list-style: none;
-      height: 50px;
-      line-height: 50px;
-      border-bottom: 3px solid #CCC;
+    #task-navbar {
+      font-weight: bolder;
+      font-size: 18px;
 
-      .task-msg-count {
-        position: absolute;
-        right: 100px;
-        top: 20px;
-        display: inline;
-        width: 30px;
-        margin-left: 100px;
-        line-height: 20px;
-        font-size: 13px;
-        text-align: center;
-        color: white;
-        background: url("../images/msgt.png") no-repeat;
+      #task-navbar-left {
+        > * {
+          width: 100px;
+          text-align: center;
+        }
       }
 
-      img {
-        margin-right: 20px;
+      #task-navbar-right {
+        > * {
+          margin-right: 30px;
+        }
+
+        #reflash {
+          width: 16px;
+          height: 16px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    #task_data_scroll_div {
+      height: 100%;
+      overflow: auto;
+      background-color: white;
+      border: 1px solid #CCC;
+      padding: 0 40px;
+
+      ul li {
+        position: relative;
+        list-style: none;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 3px solid #CCC;
+
+        .task-msg-count {
+          position: absolute;
+          right: 100px;
+          top: 20px;
+          display: inline;
+          width: 30px;
+          margin-left: 100px;
+          line-height: 20px;
+          font-size: 13px;
+          text-align: center;
+          color: white;
+          background: url("../images/msgt.png") no-repeat;
+        }
+
+        img {
+          margin-right: 20px;
+        }
       }
     }
   }
@@ -64,7 +67,7 @@
   .row {
     position: relative;
     width: 100%;
-    height: 40% - 4;
+    height: 40%;
     overflow: hidden;
 
     .box {

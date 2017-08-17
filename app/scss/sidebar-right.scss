@@ -1,18 +1,22 @@
 #sidebar-right {
-  position: absolute;
-  right: 0;
+  right: - $sidebar-right-width;
   width: $sidebar-right-width;
+  margin-left: - $sidebar-right-width;
 
   #business-actions {
+    height: $sidebar-right-business-actions-height;
     background: $backgroundColor;
     padding: 10px;
     text-align: center;
-    height: $sidebar-right-business-actions-height;
 
     a {
       float: left;
       width: 50%;
-      height: 70px;
+      height: 50%;
+    }
+
+    .wrapper {
+      height: 100%;
     }
 
     .wrapper:after {
@@ -81,8 +85,9 @@
     line-height: 46px;
     background: $navbar-color-bgcolor;
     font-weight: bold;
-    color:#FFF;
-    a{
+    color: #FFF;
+
+    a {
       margin-right: 20px;
     }
   }
